@@ -1,0 +1,186 @@
+@import url('https://use.fontawesome.com/releases/v5.8.2/css/all.css');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    font-family: Noto Sans JP;
+}
+
+header {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    background-color: rgb(249, 55, 0);
+    height: 50px;
+    color: white;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-between;
+    width: 40%;
+}
+
+.bla {
+    display: flex;
+}
+
+.search-bar {
+    width: 300px;
+    height: 25px;
+}
+
+
+.fa-search {
+    background-color: rgb(182, 175, 175);
+    width: 50px;
+    height: 25px;
+    padding-top: 8px;
+    padding-left: 18px;
+    font-size: 10px;
+    
+}
+
+.container-pics ul {
+    display: flex;
+    list-style-type: none;
+    padding: 1em 6em;
+}
+
+li {
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+}
+
+li p {
+    margin: auto;
+    color: rgb(130, 135, 145);
+    padding-top: 0.5em;
+}
+
+.container-pics img {
+    width: 300px;
+    height: 300px;
+}
+
+.fall-collection {
+    display: flex;
+    padding: 1em 7em;
+    color: rgb(130, 135, 145);
+}
+
+.fall-collection button {
+    background-color: rgb(249, 55, 0);
+    color: white;
+    border-radius: 0.3em;
+    width: 80px;
+    height: 40px;
+    margin-top: 1em;
+    border: none;
+}
+
+.fall-collection h1 {
+    color: rgb(248, 55, 0);
+    margin-bottom: 0.5em;
+}
+
+.grr {
+    width: 40%;
+}
+
+.last-container {
+    background-color: rgb(202, 195, 195);
+    display: flex;
+    justify-content: space-evenly;
+    margin: 1em 7em;
+    height: 300px;
+}
+
+.last-container img {
+    width: 80px;
+    height: 80px;
+    
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+    
+    align-self: center;
+}
+.card i {
+    align-self: center;
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    
+}
+
+.card i img {
+    align-content: center;
+    padding-top: 23px;
+    padding-left: 23px;
+}
+.card h3 {
+    align-self: center;
+    color: grey;
+}
+
+.card p {
+    color: rgb(82, 79, 79);
+}
+
+footer {
+    display: flex;
+    flex-direction: row;
+    margin: 1em 1em 1em 8em;
+    justify-content:space-around;
+    color: rgb(82, 79, 79);
+    font-size: 0.8em;
+}
+
+footer div ul {
+    display: flex;
+    flex-direction: row;
+}
+
+footer div ul button {
+    width: 130px;
+    height: 30px;
+    border-radius: 0.3em;
+    border: none;
+}
+
+.middle {
+    align-items: flex-start;
+    align-self: center;
+    margin-left: 7em;
+}
+
+.social {
+    margin: auto;
+}
+
+.social ul {
+    display: flex;
+    flex-direction: row;
+    font-size: 1.1em;
+}
+.social ul li {
+    margin: 0.5em;
+}
+
+.bigger {
+    
+    font-weight: bolder;
+}
+
