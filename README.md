@@ -14,3 +14,4 @@
 | [Programming Basics - Python](https://softuni.bg/trainings/1929/programming-basics-with-python-april-2018) | [Link](https://softuni.bg/certificates/details/67526/45b8dfaa)|
 | [Programming Basics - C#](https://softuni.bg/trainings/2275/programming-basics-with-csharp-february-2019) | [Link](https://softuni.bg/certificates/details/64408/6d7fdf14)|
 | [C# Fundamentals](https://softuni.bg/trainings/2363/csharp-fundamentals-may-2019) | [Link](https://softuni.bg/certificates/details/69550/9e19740e)|
+| [HTML & CSS](https://softuni.bg/trainings/2501/html-and-css-september-2019) | [Link](https://softuni.bg/certificates/details/69550/9e19740e)|
