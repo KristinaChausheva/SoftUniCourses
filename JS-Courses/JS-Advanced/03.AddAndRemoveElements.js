@@ -21,8 +21,6 @@ function solve(params) {
             console.log(el);
         }
     }
-    
-   
 }
 
 solve(["remove", "remove", "remove"]);
