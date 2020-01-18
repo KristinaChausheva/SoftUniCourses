@@ -6,7 +6,7 @@ function solve(params) {
         } else if (a.length < b.length) {
             return -1;
         } else {
-            params.sort();
+            params.sort((a1,b1) => b1 - a1);
             
         }
     }

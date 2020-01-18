@@ -1,5 +1,9 @@
 function solve(params) {
-    let counter = params.pop();
+    //console.log(params);
+    
+    let counter = (Number(params.pop())) % params.length;
+    //console.log(params);
+    
     while (counter > 0) {
         params.unshift(params.pop());
         counter -= 1;
@@ -7,4 +11,4 @@ function solve(params) {
     console.log(...params);
 }
 
-solve(['1', '2', '3', '4', '2'])
+solve(['1', '2', '3', '4', '15'])

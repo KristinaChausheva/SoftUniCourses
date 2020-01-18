@@ -8,7 +8,9 @@ function solve(params) {
             maxNum = currentNum;
             console.log(maxNum);
         }
+        counter--;
     }
 }
 
-solve([1, 3, 8, 4, 10, 12, 3, 2, 24])
+//solve([1, 3, 8, 4, 10, 12, 3, 2, 24])
+solve([-100, 2, 3, 4])
