@@ -5,6 +5,9 @@ function solve(params) {
     let currentArr = [];
     let currentArrSum = 0;
     isMagic = false;
+    let col1 = [];
+    col1.push(arr1.pop());
+    let 
     for (let i = 0; i <= params.length; i++) {
        
         currentArr = params.shift();
@@ -14,6 +17,8 @@ function solve(params) {
         } else {
             isMagic = true;
         }
+        col1.push(currentArr.shift());
+
     }
 
     console.log(isMagic);
