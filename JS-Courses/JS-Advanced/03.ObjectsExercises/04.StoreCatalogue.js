@@ -10,18 +10,28 @@ function solve(params) {
    })
     let arrLetters = [];
     let a = Object.keys(orderedObj);
+    let isIn = false;
     for (const key in orderedObj) {
         
         let currentLetter = key[0];
-        let firstLetter = arrLetters[0];
-        if (currentLetter === firstLetter) {
+
+        //arrLetters.push(currentLetter);
+       for (let i = 0; i < arrLetters.length; i++) {
+           if (arrLetters[i] === currentLetter) {
+               isIn = true;
+           } else {
+               isIn = false;
+           }
+        }
+        if (isIn) {
             console.log(`  ${key}: ${orderedObj[key]}`);
         } else {
             arrLetters.push(currentLetter);
             console.log(currentLetter);
             console.log(`  ${key}: ${orderedObj[key]}`);
-           
         }
+        
+       
     }
     
 }
@@ -29,10 +39,7 @@ function solve(params) {
 solve(
     [
     'Appricot : 20.4',
-    'Fridge : 1500',
     'TV : 1499',
-    'Deodorant : 10',
-    'Boiler : 300',
     'Apple : 1.25',
     'Anti-Bug Spray : 15',
     'T-Shirt : 10'
