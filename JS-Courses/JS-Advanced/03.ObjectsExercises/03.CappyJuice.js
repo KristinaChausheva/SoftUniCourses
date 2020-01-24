@@ -14,12 +14,19 @@ function solve(params) {
         } else {
             obj[arr[0]] = parseInt(arr[1]);
         }
+
+        for (const key in obj) {
+            if (obj[key] / 1000 > 1) {
+                let currentVal = Math.trunc((obj[key] / 1000));
+                console.log(`${key} => ${currentVal}`);
+            }
+        }
         
        
     }
     //console.log(orderedList);
     
-    console.log(obj);
+    //console.log(obj);
     
 }
 

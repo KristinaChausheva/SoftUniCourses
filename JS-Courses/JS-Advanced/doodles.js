@@ -1,6 +1,14 @@
 function name(params) {
-    console.log(params / 1000);
+    
+    const arr = params;
+    //const reducer =  ;
+    return
+    arr.reduce((acc, cur) => {
+        acc.push(cur);
+        return acc;
+    }, [] );
+    
     
 }
 
-name(2001)
+console.log(name([1,2,3,4]));
