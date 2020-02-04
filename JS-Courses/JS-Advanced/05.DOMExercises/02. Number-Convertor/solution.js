@@ -20,5 +20,5 @@ function solve() {
             result = (Number(input.value)).toString(16).toUpperCase();
         }
         document.getElementById('result').value = result;
-    })
+    });
 }
