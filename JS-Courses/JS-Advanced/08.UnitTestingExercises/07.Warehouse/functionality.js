@@ -131,4 +131,22 @@ class Warehouse {
     }
 }
 
+
+const obj = new Warehouse(100);
+console.log(obj.occupiedCapacity())
+//console.log(obj.addProduct("Drink", "B", 5));
+
+console.log(obj.addProduct("Drink", "A", 2));
+
+console.log(obj.revision());
+
+
+//console.log(obj.orderProducts(""));
+
+
+//
+//warehouse.addProduct("Drink", "B", 5);
+//warehouse.addProduct("Food", "Z", 1);
+//warehouse.addProduct("Food", "S", 2);
+
 module.exports = Warehouse;

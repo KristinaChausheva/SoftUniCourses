@@ -1,17 +1,10 @@
-const {
-    expect
-} = require("chai");
-
-const {
-    beforeEach
-} = require("mocha");
-
-const Warehouse = require('./Warehouse.js');
+let expect = require("chai").expect;
+const Warehouse = require('./functionality');
 
 describe('Tests', () => {
     let warehouse;
 
-    beforeEach(function () {
+    beforeEach(() => {
         warehouse = new Warehouse(28);
     });
 
@@ -26,7 +19,7 @@ describe('Tests', () => {
 
         it('Test error properties', () => {
             const result = () => new Warehouse("Error");
-            expect(result).to.throw(`Invalid given warehouse space`);
+            expect(result).to.throw(`Invalid given warehouse space`); // unneded test
         });
     });
 
@@ -57,13 +50,24 @@ describe('Tests', () => {
             expect(result).to.equal(`{"B":5,"A":2}`);
         });
 
-        it("Test functionality without available products", function () {
+        it("Test functionality with available products", function () {
+            warehouse.addProduct("Drink", "A", 2);
+            warehouse.addProduct("Drink", "B", 5);
+            warehouse.addProduct("Food", "Z", 1);
+            warehouse.addProduct("Food", "S", 2);
+
+            const result = JSON.stringify(warehouse.orderProducts("Food"));
+
+            expect(result).to.equal(`{"Z":1,"S":2}`);
+        });
+
+        it("Test functionality without available products", function () {  //unneeded test
             const result = JSON.stringify(warehouse.orderProducts("Drink"));
             expect(result).to.equal(`{}`);
         });
     });
 
-    describe('Test occupiedCapacity() method', () => {
+    describe('Test occupiedCapacity() method', () => {  //the whole describe unneeded 
         it('Test zero result', () => {
             const result = warehouse.occupiedCapacity();
             expect(result).to.equal(0);
@@ -81,56 +85,56 @@ describe('Tests', () => {
         });
     });
 
-    describe('Test revision() method', () => {
-        it('Test empty output', () => {
-            const result = warehouse.revision();
-            expect(result).to.equal("The warehouse is empty");
-        });
+    // describe('Test revision() method', () => {
+    //     it('Test empty output', () => {
+    //         const result = warehouse.revision();
+    //         expect(result).to.equal("The warehouse is empty");
+    //     });
 
-        it('Test none-empty output', () => {
-            warehouse.addProduct("Food", "Z", 1);
-            warehouse.addProduct("Food", "A", 3);
-            warehouse.addProduct("Drink", "B", 2);
-            warehouse.addProduct("Drink", "E", 8);
+    //     it('Test none-empty output', () => {
+    //         warehouse.addProduct("Food", "Z", 1);
+    //         warehouse.addProduct("Food", "A", 3);
+    //         warehouse.addProduct("Drink", "B", 2);
+    //         warehouse.addProduct("Drink", "E", 8);
 
-            const result = warehouse.revision();
+    //         const result = warehouse.revision();
 
-            expect(result).to.equal("Product type - [Food]\n- Z 1\n- A 3\nProduct type - [Drink]\n- B 2\n- E 8");
-        });
-    });
+    //         expect(result).to.equal("Product type - [Food]\n- Z 1\n- A 3\nProduct type - [Drink]\n- B 2\n- E 8");
+    //     });
+    // });
 
-    describe('Test scrapeAProduct() method', () => {
-        it('Test error', () => {
-            const result = () => warehouse.scrapeAProduct("Error", 12);
-            expect(result).to.throw(`Error do not exists`);
-        });
+    // describe('Test scrapeAProduct() method', () => {
+    //     it('Test error', () => {
+    //         const result = () => warehouse.scrapeAProduct("Error", 12);
+    //         expect(result).to.throw(`Error do not exists`);
+    //     });
 
-        it('Test more expected quantity functionality', () => {
-            warehouse.addProduct("Food", "Z", 1);
-            warehouse.addProduct("Food", "A", 3);
-            warehouse.addProduct("Drink", "B", 2);
-            warehouse.addProduct("Drink", "E", 8);
+    //     it('Test more expected quantity functionality', () => {
+    //         warehouse.addProduct("Food", "Z", 1);
+    //         warehouse.addProduct("Food", "A", 3);
+    //         warehouse.addProduct("Drink", "B", 2);
+    //         warehouse.addProduct("Drink", "E", 8);
 
-            const result = warehouse.scrapeAProduct("Z", 12);
+    //         const result = warehouse.scrapeAProduct("Z", 12);
 
-            expect(result).to.deep.equal({
-                Z: 0,
-                A: 3
-            });
-        });
+    //         expect(result).to.deep.equal({
+    //             Z: 0,
+    //             A: 3
+    //         });
+    //     });
 
-        it('Test expected quantity functionality', () => {
-            warehouse.addProduct("Food", "Z", 1);
-            warehouse.addProduct("Food", "A", 3);
-            warehouse.addProduct("Drink", "B", 2);
-            warehouse.addProduct("Drink", "E", 8);
+    //     it('Test expected quantity functionality', () => {
+    //         warehouse.addProduct("Food", "Z", 1);
+    //         warehouse.addProduct("Food", "A", 3);
+    //         warehouse.addProduct("Drink", "B", 2);
+    //         warehouse.addProduct("Drink", "E", 8);
 
-            const result = warehouse.scrapeAProduct("A", 1);
+    //         const result = warehouse.scrapeAProduct("A", 1);
 
-            expect(result).to.deep.equal({
-                Z: 1,
-                A: 2
-            });
-        });
-    });
+    //         expect(result).to.deep.equal({
+    //             Z: 1,
+    //             A: 2
+    //         });
+    //     });
+    // });
 });

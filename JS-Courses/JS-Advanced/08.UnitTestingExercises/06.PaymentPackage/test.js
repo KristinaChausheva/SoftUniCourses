@@ -1,4 +1,4 @@
-const PaymentPackage = require('./PaymentPackage.js');
+const PaymentPackage = require('./functionality.js');
 const expect = require('chai').expect;
 
 describe("PaymentPackage", () => {
