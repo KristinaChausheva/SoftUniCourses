@@ -70,12 +70,10 @@ class SkiResort {
 module.exports = SkiResort;
 
 let obj = new SkiResort();
-obj.build('name', 14);
-obj.book('name',5);
-obj.leave('name', 5, 15);
+console.log(obj.hotels);
 
-console.log(obj.voters);
-console.log(obj.averageGrade());
+//console.log(obj.build('name', 14));
+
 
 
 

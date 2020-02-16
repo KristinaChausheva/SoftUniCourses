@@ -16,3 +16,6 @@
         }
     }
 })();
+
+Extensible.Object(obj1);
+console.log(obj1);
