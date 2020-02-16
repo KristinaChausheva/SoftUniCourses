@@ -70,7 +70,7 @@ class SkiResort {
 module.exports = SkiResort;
 
 let obj = new SkiResort();
-console.log(obj.hotels);
+console.log(obj.build('hot1', 2));
 
 //console.log(obj.build('name', 14));
 
