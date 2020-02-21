@@ -14,7 +14,7 @@ class Forum {
         if (password !== repeatPassword) {
             throw new Error('Passwords do not match');
         }
-        if (this.users.find(x => x.username === username)) {
+        if (this.users.find(x => x.username === username) || this._users.find(u => u.email === email)) {
             throw new Error("This user already exists!");
         }
         //console.log(this.users.push({username,email}));
