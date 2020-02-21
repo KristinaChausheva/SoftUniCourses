@@ -156,3 +156,4 @@ describe('SkiResort', function () {
         });
     });
 });
+

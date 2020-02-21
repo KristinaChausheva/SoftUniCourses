@@ -82,4 +82,20 @@ class PizzUni {
         }
     }
 }
-module.exports = PizzUni; // This piece of code exports the PizzUni Class, so it could be accessed in other files.
+module.exports = PizzUni;
+
+const obj = new PizzUni();
+obj.registerUser('email1');
+//console.log(obj.registeredUsers);
+//console.log(obj.userOrder);
+
+
+console.log(obj.makeAnOrder('email1', 'Italian Style', 'Fanta'));
+console.log(obj.orders[0]);
+console.log(obj.registeredUsers[0].orderHistory);
+//console.log(obj.orders[0][id]);
+//console.log(obj.detailsAboutMyOrder(1) );
+
+
+
+//console.log(isThereAPizzaOrdered);
