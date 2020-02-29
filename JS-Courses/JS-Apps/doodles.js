@@ -1,24 +1,21 @@
-(function solve() {
-    Array.prototype.last = function () {
-        return this[this.length - 1]
-    };
-    Array.prototype.skip = function (n) {
-        return this.slice(n)
-    };
-    Array.prototype.take = function (n) {
-        return this.slice(0, n)
-    };
-    Array.prototype.sum = function () {
-        return this
-            .map(Number)
-            .reduce((a, b) => {
-                return a + b
-            }, 0);
-    }
-    Array.prototype.average = function () {
-        return this.sum() / this.length;
-    }
-}());
+// let str = new String('a');
+// console.log(str);
+// console.log(str.localeCompare('c'));
 
-const arr = [1,2,3];
-console.log(arr.last());
+(function () {
+    let str = {
+    }
+})();
+
+
+
+// let str = 'my string';
+// str = str.ensureStart('my');
+// str = str.ensureStart('hello');
+// str = str.truncate(16);
+// str = str.truncate(14);
+// str = str.truncate(8);
+// str = str.truncate(4);
+// str = str.truncate(2);
+// str = String.format('The {0} {1} fox', 'quick', 'brown');
+// str = String.format('jumps {0} {1}', 'dog');
