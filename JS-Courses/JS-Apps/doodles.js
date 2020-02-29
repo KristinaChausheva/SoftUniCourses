@@ -1,41 +1,24 @@
-class Hex {
-    constructor(value) {
-        this.value = value;
+(function solve() {
+    Array.prototype.last = function () {
+        return this[this.length - 1]
+    };
+    Array.prototype.skip = function (n) {
+        return this.slice(n)
+    };
+    Array.prototype.take = function (n) {
+        return this.slice(0, n)
+    };
+    Array.prototype.sum = function () {
+        return this
+            .map(Number)
+            .reduce((a, b) => {
+                return a + b
+            }, 0);
     }
-
-    valueOf(){
-        return this.value;
+    Array.prototype.average = function () {
+        return this.sum() / this.length;
     }
+}());
 
-    toString(){
-        return   `0x${this.value.toString(16).toUpperCase()}`;
-    }
-
-    plus(num){
-        return new Hex(this.value +num);
-    }
-
-    minus(num){
-        return new Hex(this.value - num);
-    }
-
-    parse(str){
-        return this.value.toString(10);
-    }
-
-}
-
-let ff = new Hex(14);
-console.log(ff.valueOf() + 1);
-console.log(ff.toString());
-let f = new Hex(15)
-console.log(f.toString());
-console.log(ff.plus(1).toString());
-
-let a = new Hex(15)
-let b = new Hex(1);
-//console.log(a.plus(b).toString());
-
-console.log(a.parse(a));
-
-
+const arr = [1,2,3];
+console.log(arr.last());
