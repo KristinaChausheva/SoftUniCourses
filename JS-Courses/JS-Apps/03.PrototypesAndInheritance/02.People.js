@@ -76,7 +76,8 @@ result = result();
 
 var guy1 = new result.Junior('pesho', 20);
 var guy2 = new result.Senior('gosho', 21);
-var guy3 = new result.Manager('ivan', 22)
+var guy3 = new result.Manager('ivan', 22);
+var guy4 = new result.Employee('ivanka', 33)
 //console.log(guy3.hasOwnProperty('divident'));
 guy2.salary = 1200;
 guy3.divident = 200
