@@ -1,6 +1,29 @@
 canvas {
   
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+h1 {
+  margin: auto auto;
+  z-index: 10;
+  font-size: 10em;
+  color: white;
+  font-family: sans-serif;
+  animation-name: example;
+  animation-duration: 4s;
+  opacity: 1;
+  border-bottom: solid 3px white;
+}
+
+@keyframes example {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}

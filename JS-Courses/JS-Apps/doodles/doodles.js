@@ -5,7 +5,7 @@ var w = c.width = window.innerWidth,
     opts = {
       
       len: 30,
-      count: 6,
+      count: 666,
       baseTime: 10,
       addedTime: 10,
       dieChance: .000005,
@@ -17,7 +17,7 @@ var w = c.width = window.innerWidth,
       color: 'hsl(hue,100%,light%)',
       baseLight: 50,
       addedLight: 10, // [50-10,50+10]
-      shadowToTimePropMult: 6,
+      shadowToTimePropMult: 3,
       baseLightInputMultiplier: .01,
       addedLightInputMultiplier: .02,
       
@@ -27,7 +27,7 @@ var w = c.width = window.innerWidth,
       hueChange: 0
     },
     
-    tick = 10,
+    tick = 1,
     lines = [],
     dieX = w / 2 / opts.len,
     dieY = h / 2 / opts.len,
@@ -59,6 +59,7 @@ function Line(){
   
   this.reset();
 }
+
 Line.prototype.reset = function(){
   
   this.x = 0;
@@ -66,15 +67,16 @@ Line.prototype.reset = function(){
   this.addedX = 0;
   this.addedY = 0;
   
-  this.rad = 0;
+  this.rad = 11;
   
   //this.lightInputMultiplier = opts.baseLightInputMultiplier + opts.addedLightInputMultiplier * Math.random();
   
-  //this.color = opts.color.replace( 'hue', tick * opts.hueChange );
+  this.color = opts.color.replace( 'hue', tick * opts.hueChange );
   this.cumulativeTime = 0;
   
   this.beginPhase();
 }
+
 Line.prototype.beginPhase = function(){
   
   this.x += this.addedX;
@@ -90,6 +92,7 @@ Line.prototype.beginPhase = function(){
   if( Math.random() < opts.dieChance || this.x > dieX || this.x < -dieX || this.y > dieY || this.y < -dieY )
     this.reset();
 }
+
 Line.prototype.step = function(){
   
   ++this.time;
@@ -103,9 +106,9 @@ Line.prototype.step = function(){
       x = this.addedX * wave,
       y = this.addedY * wave;
   
-  //ctx.shadowBlur = prop * opts.shadowToTimePropMult;
-  ctx.fillStyle = ctx.shadowColor = 'yellow'
-  // this.color.replace( 'light', opts.baseLight + opts.addedLight * Math.sin( this.cumulativeTime * this.lightInputMultiplier ) );
+  ctx.shadowBlur = prop * opts.shadowToTimePropMult;
+  ctx.fillStyle = ctx.shadowColor = 'orange'
+  this.color.replace( 'light', opts.baseLight + opts.addedLight * Math.sin( this.cumulativeTime * this.lightInputMultiplier ) );
   ctx.fillRect( opts.cx + ( this.x + x ) * opts.len, opts.cy + ( this.y + y ) * opts.len, 2, 2 );
   
 
@@ -128,3 +131,4 @@ window.addEventListener( 'resize', function(){
   dieX = w / 2 / opts.len;
   dieY = h / 2 / opts.len;
 });
+
