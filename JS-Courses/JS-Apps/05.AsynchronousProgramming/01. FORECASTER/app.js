@@ -1,7 +1,7 @@
 function attachEvents() {
 
     let BASE_URL = 'https://judgetests.firebaseio.com/locations.json';
-    let CURRENT_WEATHER_URL = `https://judgetests.firebaseio.com/forecast/today/code.json`;
+    let W_URL = `https://judgetests.firebaseio.com/forecast/{status}/{code}.json`;
 
     const elements = {
         locationInput: document.querySelector('#location'),
@@ -15,27 +15,48 @@ function attachEvents() {
         
     }
 
+    const jsonMiddleWare = (r) => r.json();
+
     elements.button.addEventListener('click', getLocationValue);
 
     function getLocationValue() {
         const location = elements.locationInput.value;
+
         fetch(BASE_URL)
-        .then((r) => r.json())
+        .then(jsonMiddleWare)
         .then((d) => {
-            const locationData = d.find((o) => o.name === location);
-            console.log(locationData.code);
-            
+            const {name, code } = d.find((o) => o.name === location);
+            //console.log(name);
+            const CURRENT_TODAY_URL = W_URL.replace('{status}/{code}', `today/${code}`);
+            const CURRENT_UPCOMING_URL = W_URL.replace('{status}/{code}', `upcoming/${code}`)
+
+           Promise.all([
+                fetch(CURRENT_TODAY_URL).then(jsonMiddleWare),
+                fetch(CURRENT_UPCOMING_URL).then(jsonMiddleWare)
+           ])
+           
+           .then(showWeatherLocation)
+           .catch(errHandler)
         })
         .catch(errHandler);
+        
+    }
 
-        fetch(CURRENT_WEATHER_URL)
-        .then((r) => r.json())
-        .then((d) => {
-            const currWeather = d.find((o) => o.name === locationData.code);
-            console.log(currWeather);
-            
-        })
-        .catch((e) => console.log(e.message));
+    function showWeatherLocation([todayData, upcomingData]){
+        console.log(todayData);
+        
+    }
+
+    function createHTMLElement(tagName, classNames, textContent) {
+        let element = document.createAttribute(tagName);
+        if (classNames) {
+            element.classList.add(...classNames);
+        }
+        if (textContent) {
+            element.textContent = textContent;
+        }
+
+        return element;
     }
 
 
