@@ -1,0 +1,10 @@
+Unexpected error: expected 
+'<h2>Archive</h2><ul></ul>' to equal 
+'<h2>Archive</h2>
+<ul><li>Arrays</li></ul>'
+
+
+Unexpected error: expected 
+'<h2>Archive</h2><ul></ul>' to equal 
+'<h2>Archive</h2>
+<ul><li>Arrays</li><li>MyArticle</li></ul>'
