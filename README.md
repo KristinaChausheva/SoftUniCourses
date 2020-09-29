@@ -17,3 +17,4 @@
 | [HTML & CSS](https://softuni.bg/trainings/2501/html-and-css-september-2019) | [Link](https://softuni.bg/certificates/details/72589/3af6cf13)|
 | [CSS Advanced](https://softuni.bg/trainings/2543/css-advanced-november-2019) | [Link](https://softuni.bg/certificates/details/75176/41da89ca)|
 | [JS Advanced](https://softuni.bg/trainings/2609/js-advanced-january-2020) | [Link](https://softuni.bg/certificates/details/80489/d9ba8dfe)|
+| [JS Back-End](https://softuni.bg/trainings/2846/js-back-end-may-2020) | [Link](https://softuni.bg/certificates/details/87369/ca7f94d9)|
